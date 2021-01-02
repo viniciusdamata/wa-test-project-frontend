@@ -15,7 +15,7 @@ import {
   tap
 } from 'rxjs/operators';
 
-import { API_ENDPOINT } from '../settings';
+import { API_ENDPOINT, API_ENDPOINT_APP_ROUTE } from '../settings';
 import { apiResponseFormatter } from './../formatters/apiResponse';
 import authService from './auth';
 import tokenService, { TokenService } from './token';
@@ -137,4 +137,8 @@ export class ApiService {
 }
 
 const apiService = new ApiService(API_ENDPOINT, tokenService);
+
+const appApiService = new ApiService(API_ENDPOINT_APP_ROUTE, tokenService);
+
+export { appApiService };
 export default apiService;
